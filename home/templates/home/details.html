@@ -1,0 +1,12 @@
+<h1>{{ restaurant.name }}</h1>
+
+<h2>Menu</h2>
+
+{% for m in menus %}
+    <div>
+        <h3>{{ m.name }}</h3>
+        <p>Price: {{ m.price }}</p>
+    </div>
+{% empty %}
+    <p>No menu available</p>
+{% endfor %}
