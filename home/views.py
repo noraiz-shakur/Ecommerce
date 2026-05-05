@@ -6,17 +6,16 @@ from .models import Restaurant, Menu
 def home(request):
     return render(request, "home/index.html")
 
+
 def restaurant_list(request):
     restaurants = Restaurant.objects.all()
-    return render(request, 'home/index.html', {'restaurants': restaurants})
+    return render(request, "home/index.html", {"restaurants": restaurants})
+
 
 def restaurant_detail(request, id):
     restaurant = get_object_or_404(Restaurant, id=id)
     menus = Menu.objects.filter(restaurant_id=id)
 
-    return render(request, 'home/details.html', {
-        'restaurant': restaurant,
-        'menus': menus
-    })
-
-
+    return render(
+        request, "home/details.html", {"restaurant": restaurant, "menus": menus}
+    )
