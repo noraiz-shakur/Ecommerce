@@ -2,10 +2,14 @@
 
 <h2>Menu</h2>
 
+<a href="{% url 'add_menu' %}">Add Menu</a>
 {% for m in menus %}
     <div>
         <h3>{{ m.name }}</h3>
         <p>Price: {{ m.price }}</p>
+        <a href="{% url 'edit_menu' m.id %}">Edit</a>
+        <a href="{% url 'delete_menu' m.id %}">Delete</a>
+        
     </div>
 {% empty %}
     <p>No menu available</p>

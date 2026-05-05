@@ -1,0 +1,16 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="Menu Name">
+
+    <input type="number" name="price" placeholder="Price">
+
+
+    <select name="restaurant">
+        {% for r in restaurants %}
+            <option value="{{ r.id }}">{{ r.name }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Add Menu</button>
+</form>

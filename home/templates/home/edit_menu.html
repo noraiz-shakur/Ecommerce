@@ -1,0 +1,9 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="name" value="{{ menu.name }}"><br>
+
+    <input type="number" name="price" value="{{ menu.price }}"><br>
+
+    <button type="submit">Update</button>
+</form>
